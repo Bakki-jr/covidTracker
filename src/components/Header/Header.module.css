@@ -1,0 +1,38 @@
+.headerWrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.headerWrapper a {
+    text-decoration: none;
+}
+.covidImage {
+    width: 370px;
+    margin-top: 20px;
+}
+
+.button {
+    align-self: center;
+    text-transform: initial !important;
+}
+
+@media (max-width:770px) {
+    .container {
+        margin: 0 10%;
+    }
+
+    .covidImage {
+        width: 100%;
+        object-fit: scale-down;
+    }
+
+    .headerWrapper {
+        flex-direction: column;
+    }
+
+    .button {
+        margin-top: 15px !important;
+    }
+}

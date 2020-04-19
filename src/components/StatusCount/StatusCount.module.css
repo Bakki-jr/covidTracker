@@ -1,0 +1,37 @@
+.container {
+    width: 20%;
+    margin: 0 2.5%;
+}
+
+.paperCard {
+    display: flex;
+    justify-content: center;
+    /* align-items: baseline; */
+    flex-direction: column;
+    /* padding-left: 20px; */
+}
+
+.title {
+    padding-left: 20px;
+    font-weight: 500;
+}
+
+.delta {
+    text-align: center;
+    font-family: monospace;
+    margin: 0;
+}
+
+.count {
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@media (max-width:770px) {
+    .container {
+        width: 100%;
+        margin: 20px 0;
+    }
+}

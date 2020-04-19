@@ -1,0 +1,26 @@
+.container {
+    margin: 15px 0 15px;
+    display: flex;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.updatedTime {
+    width: 76%;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: monospace;
+}
+
+@media (max-width:770px) {
+    .container {
+        margin: 0px 20px 5px;
+        display: block;
+        width: 100%;
+    }
+    .updatedTime {
+        width: 100%;
+        text-align: center;
+    }
+}

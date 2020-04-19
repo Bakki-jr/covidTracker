@@ -1,0 +1,71 @@
+.tableContainer {
+    width: 76% !important;
+    margin: 15px 0;
+}
+
+.heading {
+    font-size: 14px !important;
+    font-weight: bold !important;
+    font-family: 'Segoe UI' !important;
+}
+
+.state {
+    font-weight: bold !important;
+}
+
+.confirmed {
+    color: #007bff !important;
+}
+
+.active {
+    color: #6c757d !important;
+}
+
+.recovered {
+    color: #28a745 !important;
+}
+
+.deaths {
+    color: #ff073a !important;
+}
+
+.lastUpdate {
+    color: darkslategray !important;
+}
+
+.delta {
+    font-size: 12px !important;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.fontMono {
+    font-size: 14px !important;
+    font-family: monospace !important;
+}
+
+.fontSegoe {
+    font-family: 'Segoe UI' !important;
+}
+
+
+@media (max-width:770px) {
+    .tableContainer {
+        width: 100% !important;
+        font-size: 11px !important;
+    }
+
+    th, td {
+        padding: 5px !important;
+    }
+
+    .state, .heading {
+        font-size: 10px !important;
+        font-weight: 400 !important;
+        line-height: 11px !important;
+    }
+
+    .fontMono, .delta {
+        font-size: 10px !important;
+    }
+}

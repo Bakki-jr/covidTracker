@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { NativeSelect, FormControl } from '@material-ui/core';
+// import TextField from '@material-ui/core/TextField';
+// import Autocomplete from '@material-ui/lab/Autocomplete';
 
 import styles from './CountryPicker.module.css';
 
-import { fetchCountries } from '../../api'
+import { fetchCountries } from '../../api';
 
 function CountryPicker({ handleCountryChange }) {
     const [fetchedCountries, setFetchedCountries] = useState([]);
@@ -21,6 +23,13 @@ function CountryPicker({ handleCountryChange }) {
                 {fetchedCountries.map((country, i) => <option key={i} value={country}>{country}</option>)}
             </NativeSelect>
         </FormControl>
+        // <Autocomplete
+        //     id="combo-box-demo"
+        //     options={fetchedCountries.country}
+        //     getOptionLabel={(option) => option.fetchedCountries.country}
+        //     style={{ width: 300 }}
+        //     renderInput={(params) => <TextField {...params} label="Combo box" variant="outlined" />}
+        // />
     )
 }
 

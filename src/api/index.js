@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
+const covidIndiaURL = 'https://api.covid19india.org/data.json';
 
 export const fetchData = async (country) => {
     let changebleURL =  url;
@@ -35,6 +36,16 @@ export const fetchCountries = async () => {
         const {data: {countries}} = await axios.get(`${url}/countries`);
         console.log(countries);
         return countries.map( country => country.name)
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const fetchIndiasData = async () => {
+    try {
+        const { data } = await axios.get(covidIndiaURL);
+        console.log(data, ':: INDIAs Data ::');
+        return data;
     } catch (error) {
         console.log(error);
     }

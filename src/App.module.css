@@ -1,5 +1,6 @@
 body {
     background-color: rgb(250, 250, 250);
+    font-family:'Segoe UI';
 }
 
 .container {
@@ -9,17 +10,8 @@ body {
     flex-direction: column;
 }
 
-.covidImage {
-    width: 370px;
-    margin-top: 20px;
-}
-
 @media (max-width:770px) {
     .container {
         margin: 0 10%;
-    }
-
-    .covidImage {
-        width: 100%;
     }
 }
