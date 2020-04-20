@@ -35,7 +35,7 @@ class App extends React.Component {
 				<div className={styles.container}>
 					<Switch>
 						<Route path="/" exact>
-							<Header title={'Detailed info - COVID19 INDIA'} path="/covid19-India" />
+							<Header title={'Go To - COVID19 INDIA'} path="/covid19-India" />
 							<Cards data={data} />
 							<CountryPicker handleCountryChange={this.handleCountryChange} />
 							<Chart data={data} country={country} />

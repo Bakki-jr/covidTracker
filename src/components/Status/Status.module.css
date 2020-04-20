@@ -13,6 +13,25 @@
     font-family: monospace;
 }
 
+.cardStyle {
+    padding: 10px;
+    background-color: #1c2833;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.label {
+    color: #4fdee5;
+    font-weight: 700;
+}
+
+.labelContent {
+    color: #01ff70;
+    font-weight: 700;
+}
+
 @media (max-width:770px) {
     .container {
         margin: 0px 20px 5px;
@@ -20,7 +39,7 @@
         width: 100%;
     }
     .updatedTime {
-        width: 100%;
+        width: 94%;
         text-align: center;
     }
 }
