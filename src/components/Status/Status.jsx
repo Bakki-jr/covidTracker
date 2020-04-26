@@ -8,9 +8,6 @@ import CountUp from 'react-countup';
 
 function Status({ data, tested }) {
 
-	console.log(data, 'status');
-	console.log(tested, 'tested');
-
 	const confirmedData = {
 		title: 'Confirmed',
 		confirmed: data.confirmed,
@@ -44,11 +41,14 @@ function Status({ data, tested }) {
 				<StatusCount data={DeathsData} />
 			</div>
 			<div className={styles.updatedTime}> Last updated on: {data.lastupdatedtime}</div>
+			{ tested !== undefined ? 
 			<div className={cx(styles.updatedTime,styles.cardStyle)}>
-				<div className={styles.label}>Total Individual Cases Tested: <span className={styles.labelContent}> <CountUp start={0} end={Number(tested.totalindividualstested)} duration={1} separator="," /></span></div>
+				<div className={styles.label}>Total Individual Cases Tested: <span className={styles.labelContent}> <CountUp start={0} end={Number(tested.totalsamplestested)} duration={1} separator="," /></span></div>
 				<div className={styles.label}>Last updated on: <span className={styles.labelContent}>{tested.updatetimestamp}</span></div>
 				<div className={styles.label}>Source: <a target='_blank' className={styles.labelContent} href={tested.source}>ICMR - PDF</a></div>
 			</div>
+			: ''
+			}
 		</Fragment>
 	)
 }

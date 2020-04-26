@@ -11,22 +11,22 @@ function Covid19India() {
 	const [countriesData, setcountriesData] = useState([]);
 	const [totalIndividualsTested, setTotalIndividualsTested] = useState([]);
 	useEffect(() => {
-		const constFetchAPI = async () => {
+		const fetchAPI = async () => {
 			const totalCountData = await fetchIndiasData();
 			setcountriesData(totalCountData.statewise);
 			setTotalIndividualsTested(totalCountData.tested);
 		}
-		constFetchAPI();
+		fetchAPI();
 	}, []);
 
 	console.log(countriesData, 'cd');
 
 	return (
 		<Fragment>
-			<Header title={'Go To - COVID19 Global'} path="/" />
+			<Header title={'Go To - COVID19 Global'} path="/global" />
 			<div className={styles.statesWrapper}>Cases in INDIA:</div>
 			<Fragment>{countriesData.length && totalIndividualsTested.length ? <Status data={countriesData[0]} tested={totalIndividualsTested[totalIndividualsTested.length - 1]} /> : ''}</Fragment>
-			<div className={styles.statesWrapper}>StateWise info:</div>
+			<div className={styles.statesWrapper}>StateWise info: <span style={{fontSize: '12px'}}>[click on state for detailed info]</span></div>
 			<Fragment>{countriesData.length ? <StatesData data={countriesData} /> : ''}</Fragment>
 		</Fragment>
 	)

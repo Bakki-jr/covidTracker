@@ -20,7 +20,7 @@ function StatusCount({ data }) {
 					{data.title !== 'Active' || data.delta !=='' ? `[+${data.delta}]` : ''}
 				</p>
 				<p className={styles.count}>
-					<CountUp start={0} end={Number(data.confirmed)} duration={2} separator="," />
+					{data.confirmed !== undefined ? <CountUp start={0} end={Number(data.confirmed)} duration={2} separator="," />: ''}
 				</p>
 				</div>
 			</Paper>

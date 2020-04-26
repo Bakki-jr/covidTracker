@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 const url = 'https://covid19.mathdro.id/api';
-const covidIndiaURL = 'https://api.covid19india.org/data.json';
+const covid_india_url = 'https://api.covid19india.org/data.json';
+const state_district_url = 'https://api.covid19india.org/state_district_wise.json';
+const state_district_v2_url = 'https://api.covid19india.org/v2/state_district_wise.json';
 
 export const fetchData = async (country) => {
     let changebleURL =  url;
@@ -43,10 +45,32 @@ export const fetchCountries = async () => {
 
 export const fetchIndiasData = async () => {
     try {
-        const { data } = await axios.get(covidIndiaURL);
+        const { data } = await axios.get(covid_india_url);
         console.log(data, ':: INDIAs Data ::');
         return data;
     } catch (error) {
         console.log(error);
     }
 }
+
+
+export const fetchStatesData = async () => {
+    try {
+        const { data } = await axios.get(state_district_url);
+        console.log(data, ":: State's Data ::");
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+export const fetchStatesDataV2 = async () => {
+    try {
+        const { data } = await axios.get(state_district_v2_url);
+        console.log(data, ":: State's Data ::");
+        return data;
+    } catch (error) {
+        console.log(error);
+    }
+}
+

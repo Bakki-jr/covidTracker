@@ -10,18 +10,26 @@ import Paper from '@material-ui/core/Paper';
 import cx from 'classnames';
 
 import styles from './StatesData.module.css';
+import { Link } from 'react-router-dom';
 
 function StatesData({ data }) {
 	console.log(data, ':: stateWise Data ::');
-	const statesData = data.slice(1);;
-	console.log(statesData, ':: Removed total object from array ::')
+	const statesData = data.slice(1);
+	console.log(statesData, ':: Removed total object from array ::');
+
+	let getStateDetails= (stateDetails) => {
+		const stateName = stateDetails.state;
+		console.log(stateName);
+
+	}
+
 	return (
 		<Fragment>
 			<TableContainer className={styles.tableContainer} component={Paper} elevation={2}>
 				<Table aria-label="simple table">
 					<TableHead>
 						<TableRow>
-							<TableCell className={cx(styles.heading, styles.state)}>State</TableCell>
+							<TableCell className={cx(styles.heading, styles.state)}>State/UT</TableCell>
 							<TableCell className={cx(styles.heading, styles.confirmed)} align="right">Confirmed</TableCell>
 							<TableCell className={cx(styles.heading, styles.active)} align="right">Active</TableCell>
 							<TableCell className={cx(styles.heading, styles.recovered)} align="right">Recovered</TableCell>
@@ -32,8 +40,8 @@ function StatesData({ data }) {
 					<TableBody>
 						{statesData.map((row) => (
 							<TableRow key={row.state}>
-								<TableCell className={cx(styles.state, styles.fontSegoe)} component="th" scope="row">
-									{(row.state).toUpperCase()}
+								<TableCell onClick={ () => getStateDetails(row)} value={row.state} className={cx(styles.state, styles.fontSegoe)} component="th" scope="row">
+								<Link to={`/state/${row.state}`}>{(row.state).toUpperCase()}</Link>
 								</TableCell>
 								<TableCell className={cx(styles.confirmed, styles.fontMono)} align="right"><span className={styles.delta}>{row.deltaconfirmed !== '0' ? `[+${row.deltaconfirmed}] ` : ''}</span>{row.confirmed}</TableCell>
 								<TableCell className={cx(styles.active, styles.fontMono)} align="right">{row.active}</TableCell>

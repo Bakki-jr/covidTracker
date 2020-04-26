@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import { Cards, Chart, CountryPicker, Header } from './components';
-import Covid19India from './components/Covid19India/Covid19India';
+import { Cards, Chart, CountryPicker, Header, Covid19India, DistrictData } from './components';
 
 import styles from './App.module.css';
 import { fetchData } from './api';
@@ -34,13 +33,14 @@ class App extends React.Component {
 			<Router>
 				<div className={styles.container}>
 					<Switch>
-						<Route path="/" exact>
-							<Header title={'Go To - COVID19 INDIA'} path="/covid19-India" />
+						<Route path="/" exact component={Covid19India}></Route>
+						<Route path="/global">
+							<Header title={'Go To - COVID19 INDIA'} path="/" />
 							<Cards data={data} />
 							<CountryPicker handleCountryChange={this.handleCountryChange} />
 							<Chart data={data} country={country} />
 						</Route>
-						<Route path="/covid19-India" component={Covid19India}></Route>
+						<Route path="/state/:stateName" component={DistrictData}></Route>
 					</Switch>
 				</div>
 			</Router>
